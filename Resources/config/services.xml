@@ -9,9 +9,11 @@
         <parameter key="resque.vendor_dir"/>
         <parameter key="resque.class"/>
         <parameter key="resque.prefix"/>
-        <parameter key="resque.redis.host"/>
-        <parameter key="resque.redis.port"/>
+        <!--<parameter key="resque.redis.host"/>-->
+        <!--<parameter key="resque.redis.host"/>-->
+        <parameter key="resque.redis.path"/>
         <parameter key="resque.redis.database"/>
+        <!--<parameter key="resque.redis.password"/>-->
     </parameters>
 
     <services>
@@ -22,9 +24,11 @@
                 <argument key="kernel.environment">%kernel.environment%</argument>
             </argument>
             <call method="setRedisConfiguration">
-                <argument>%resque.redis.host%</argument>
-                <argument>%resque.redis.port%</argument>
+                <!--<argument>%resque.redis.host%</argument>-->
+                <!--<argument>%resque.redis.port%</argument>-->
+                <argument>%resque.redis.path%</argument>
                 <argument>%resque.redis.database%</argument>
+                <!--<argument>%resque.redis.password%</argument>-->
             </call>
         </service>
     </services>

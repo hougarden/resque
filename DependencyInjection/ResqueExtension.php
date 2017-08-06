@@ -28,9 +28,11 @@ class ResqueExtension extends Extension
         $container->setParameter('resque.vendor_dir', $config['vendor_dir']);
         $container->setParameter('resque.app_include', $config['app_include']);
         $container->setParameter('resque.class', $config['class']);
-        $container->setParameter('resque.redis.host', $config['redis']['host']);
-        $container->setParameter('resque.redis.port', $config['redis']['port']);
+//        $container->setParameter('resque.redis.host', $config['redis']['host']);
+//        $container->setParameter('resque.redis.port', $config['redis']['port']);
+        $container->setParameter('resque.redis.path', $config['redis']['path']);
         $container->setParameter('resque.redis.database', $config['redis']['database']);
+//        $container->setParameter('resque.redis.password', $config['redis']['password']);
 
         if (!empty($config['prefix'])) {
             $container->setParameter('resque.prefix', $config['prefix']);
